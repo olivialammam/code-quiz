@@ -5,14 +5,26 @@ var timeLeft = 100;
 var timerEl = document.getElementById("display-time");
 var questionEl = document.getElementById("question-screen");
 var startEl = document.getElementById("start-section");
-var questionEl = document.getElementById("question-screen2");
-var answerBtn = document.getElementById("answer");
+const quizContainer = document.getElementById('quiz');
+const resultsContainer = document.getElementById('results');
+const submitButton = document.getElementById('submit');
+var displayQuestion = document.getElementById('question-screen');
+var submitBtn = document.getElementById("submit");
 var timeInterval; 
 
 console.log(timerEl); 
 var fruits = ["oranges", "apples", "banana", "strawberry"]; 
 console.log(fruits[2]); 
 
+
+function displayQuestion(){
+    for (var i = 0; i < questions.length; i++) {
+        
+    }
+//grab the h3 and button 
+//set their textCOntent 
+
+}
 
 function startQuiz(){
     alert("welcome to coding challenge"); 
@@ -24,6 +36,7 @@ function startQuiz(){
     startEl.style.display = "none";
     //show the question 
     displayQuestion();
+
     function answer() {
         //show the question section 
         questionEl.style.display = "block"; 
@@ -34,17 +47,6 @@ function startQuiz(){
 
 }
 }
-
-function newQuestion() {
-    var x = document.getElementById("question-screen");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  }
-  
-
 
 //Declaring a function named countDown 
 function countdown() {
@@ -68,11 +70,38 @@ function countdown() {
     }, 1000); //call this func every sec 
   }
 
-function displayQuestion(){
-//grab the h3 and button 
-//set their textCOntent 
 
-}
+// Var with array and object for questions 
+var questions = [
+    {
+        title: "Commonly used data types DO NOT include:",
+        choices: ["strings", "booleans", "alerts", "numbers"],
+        answer: "alerts"
+    },
+    {
+        title: "The condition in an else/if statement is enclosed with______",
+        choices: ["quotes", "curly brackets", "parenthesis", "square brackets"],
+        answer: "alerts"
+    },
+    {
+        title: "Arrays in JavaScript can be used to store______",
+        choices: ["numbers and strings", "other arrays", "booleans", "all of the above"],
+        answer: "alerts"
+    },
+    {
+        title: "String values must be enclosed within______",
+        choices: ["commas", "curly brackets", "quotes", "parenthesis"],
+        answer: "alerts"
+    },
+    {
+        title: "A very useful tool used during development and debugging for printing content to the debugger is:",
+        choices: ["javascript", "terminal bash", "for loops", "console.log"],
+        answer: "alerts"
+    },
+
+];
+
 
 //Add Event listiner to the Btn 
-startBtn.addEventListener("click", startQuiz); 
+startBtn.addEventListener("click", startQuiz);
+submitBtn.addEventListener("click", displayQuestion);
