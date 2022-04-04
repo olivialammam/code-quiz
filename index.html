@@ -1,63 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css" />
     <title>Coding Quiz</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
 </head>
-
 <body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col text-left">
+                <a href="#" id="viewHighScore">View High Scores</a>
+            </div>
+            <div id="timer" class="col text-right">
+                <i class="far fa-clock"></i> Time: <span id="timeLeft">0</span>
+            </div>
+             <div id="timesUp" class="col text-right" style="display: none;">Time's Up!</div>
+         </div>
 
-    <div>Time Left: <span id="display-time"> </span></div>
-    <section id="start-section">
-        <h1>Coding Quiz Challenge</h1>
-        <ul>Game rules : 
-            <li>For right answer, score 5 points </li>
-            <li>For wrong answer, penalty of 10 seconds </li>
-        </ul>
-        <button id="start-quiz">Start Quiz</button>
-    </section>
-    <section id="question-screen" style="display: none;">
-        <h3> Commonly used data types DO NOT include: </h3>
-        <button id="submit"> 1.Strings </button>
-        <button id="q1b2"> 2.Booleans</button>
-        <button id="q1b3"> 3.Alerts</button>
-        <button id="q1b4"> 4.Numbers</button>
-    </section>
-    <section id="question-screen" style="display: none;">
-        <h3> The condition in an if/else statement is enclosed with______</h3>
-        <button id="submit"> 1.Quotes</button>
-        <button>2.Curly brackets</button>
-        <button>3.Parenthesis</button>
-        <button>4.Square brackets</button>
-    </section>
-    <section id="question-screen3" style="display: none;">
-        <h3>Arrays in JavaScript can be used to store ______</h3>
-        <button>1.Numbers and strings</button>
-        <button>2.Other arrays</button>
-        <button>3.Booleans</button>
-        <button>4.All of the above</button>
-    </section>
-    <section id="question-screen4" style="display: none;">
-        <h3>String values must be enclosed within______</h3>
-        <button>1.Commas</button>
-        <button>2.Curly brackets</button>
-        <button>3.Quotes</button>
-        <button>4.Parenthesis</button>
-    </section>
-    <section id="question-screen5" style="display: none;">
-        <h3>A very useful tool used during development and debugging for printing content to the debugger is:</h3>
-        <button>1.Javascript</button>
-        <button>2.Terminal/Bash</button>
-        <button>3.For Loops</button>
-        <button>4.console.log</button>
-    </section>
+         <main class="row text-left">
+         <div id="everything" class="row text-left">
+             <div class="col-md-2"></div>
+               <main class="col-md-8 mt-5">
 
+                  <div id="start" class="m-2 justify-content-center">
+                      <h1 class="font-weight-bold pl-5 pr-5">Coding Quiz Challenge</h1>
+                      <p class="p-5">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
+                      <button type="button" id="start-quiz-button" class="btn btn-info ml-5 align-center">Start Quiz</button>
+                  </div>
+                  <div id="questionDiv" style="display: none;">
+                    <p id="questionTitle" class="pl-5 ml-2 pt-5 justify-content-center font-weight-bold"></p>
+                    <div class="pl-5 pt-2 pb-3 m-2 justify-content-center">
+                        <p><button id="btn0" class="btn btn-dark"></button></p>
+                        <p><button id="btn1" class="btn btn-dark"></button></p>
+                        <p><button id="btn2" class="btn btn-dark"></button></p>
+                        <p><button id="btn3" class="btn btn-dark"></button></p>
+                        <hr id="lineBreak" style="display: none" class="mt-4">
+                        <p id="answerCheck" style="display: none;"></p>
+                    </div>
+                  </div>
+                    <div class="pl-5 ml-2 pt-5 justify-content-center font-weight-bold" id="summary" style="display: none;">
+                        <div class="col-2"></div>
+                        <div class="col-8 text-left">
+                            <h2 class="font-weight-bold pt-2 pb-3 m-2">Your final score is <span id="finalScore"></span> !</h2>
+                            <form>
+                                <p class="pt-2 pb-3 m-2">Enter your initials: <input id="initialInput" class="form-control pt-2 pb-3 mt-2" type="text">
+                                <button type="submit" id="submitInitialBtn" class="btn btn-info mt-3">Submit</button>
+                                </p>
+                            </form>
+                        </div>
+                    <div class="col-2"></div>
+                </div>
+                <div id="highScoreSection" class="pl-5 ml-4 pt-5 justify-content-center font-weight-bold" style="display: none;">
+                     <h2 class="font-weight-bold pt-2 pb-3 mb-2">High Scores</h2>                   
 
-    <script src="./script.js"></script>
+                     <div id="listOfHighScores" class="list-group list-group-flush pt-2 pb-3 mb-2"></div>
+
+                     <p>
+                         <button type="submit" class="btn btn-info mt-3 mr-3" id="goBackBtn">Go Back</button>
+                         <button type="submit" class="btn btn-info mt-3" id="clearHighScoreBtn">Clear High Scores</button>
+                     </p>
+
+                 </div>
+               </main>
+             <div class="col-md-2"></div>
+         </main>
+         </div>
+     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/1d37754851.js" crossorigin="anonymous"></script>
 </body>
-
 </html>

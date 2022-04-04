@@ -1,0 +1,31 @@
+body {
+    background-color: #fcf3fa; 
+}
+
+h1, 
+h2 {
+    color: #313740;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    color: #ce246b;
+    font-family: 'Archivo', sans-serif;
+}
+
+a:hover {
+    color: #bf99b2;
+    font-family: 'Archivo', sans-serif;
+}
+
+.btn:focus, .btn:active, .btn:visited {
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: #40343c;
+}
+
+#finalScore {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
