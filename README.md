@@ -20,5 +20,7 @@ THEN I can save my initials and score
 My GitHub:
 https://github.com/olivialammam/code-quiz
 
+https://olivialammam.github.io/code-quiz/
+
 Here is the Mock-up:
 ![04-web-apis-homework-demo](https://user-images.githubusercontent.com/95842420/161504367-f4411b05-f988-4d87-954a-791c4a86ce0d.gif)
